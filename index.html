@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Logo -->
+    <link rel="icon" href="img/officeline_logo.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap-5.3.3/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+    <style>
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #ffffff !important;
+            /* Latar belakang putih */
+            overflow-x: hidden;
+            padding-top: 60px;
+            z-index: 9999;
+            display: none;
+            /* Sembunyikan secara default */
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            /* Tambahkan bayangan */
+            transition: all 0.3s ease;
+            /* Transisi halus */
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            /* Padding yang lebih besar */
+            font-size: 20px;
+            color: black;
+            /* Warna teks */
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+            /* Transisi untuk warna */
+        }
+
+        .sidebar a:hover {
+            background-color: #EC633D;
+            /* Warna latar belakang saat hover */
+            color: #ffffff;
+            /* Warna teks saat hover */
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 36px;
+            color: #EC633D;
+            /* Warna tombol tutup */
+            cursor: pointer;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+            /* Jarak antara ikon dan teks */
+            font-size: 20px;
+            /* Ukuran ikon */
+            vertical-align: middle;
+            /* Penjajaran vertikal */
+
+        }
+
+
+        /* Navbar styling */
+        .navbar-nav .nav-link {
+            color: #EC633D !important;
+        }
+
+        /* Responsif Sidebar di Mobile */
+        @media (max-width: 991px) {
+            .sidebar {
+                width: 100%;
+                /* Lebar penuh untuk perangkat kecil */
+                display: block;
+                position: fixed;
+
+            }
+
+            .navbar-toggler {
+                color: #EC633D;
+                font-size: 24px;
+            }
+        }
+    </style>
+
+    <title>OFFICELINE</title>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fix-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/officeline_logo.png" width="100" class="d-inline-block align-text-top me-0 me-lg-5"
+                    loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" onclick="openSidebar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="#">BERANDA</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="toko.html">TOKO</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#kontak">KONTAK</a>
+                    </li>
+                </ul>
+
+                <!-- Button Daftar/Masuk -->
+                <div class="d-none d-lg-block">
+                    <a class="btn btn-warning mx-2" href="daftar.html">DAFTAR</a>
+                    <a class="btn btn-warning mx-2" href="masuk.php">MASUK</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <span class="closebtn" onclick="closeSidebar()">&times;</span>
+        <a href="#">
+            <i class="bi bi-house-fill"></i> BERANDA
+        </a>
+        <a href="toko.php">
+            <i class="bi bi-shop"></i> TOKO
+        </a>
+        <a href="#kontak">
+            <i class="bi bi-envelope-fill"></i> KONTAK
+        </a>
+        <a href="daftar.html">
+            <i class="bi bi-person-plus-fill"></i> DAFTAR
+        </a>
+        <a href="masuk.php">
+            <i class="bi bi-box-arrow-in-right"></i> MASUK
+        </a>
+    </div>
+
+    <!--Content 1 -->
+    <section id="hero">
+        <style>
+            #hero {
+                padding-top: 20px;
+            }
+        </style>
+        <div class="container h-50">
+            <div class="row h-50 animate__animated animate__fadeInLeftBig">
+                <div class="col-12 ps-3">
+                    <h1 class="mt-5 fw-normal">LAGI BUTUH ALAT TULIS?</h1>
+                    <h1 class="mb-3 fw-normal">DI<span class="fw-bold"> OFFICE<span
+                                style="color:#EC633D;">LINE</span></span> AJA!</h1>
+                    <p class="fst-italic fw-semibold mb-4">OFFICE<span style="color:#EC633D;">LINE</span> Menjual
+                        Berbagai Perlengkapan Alat Tulis Sesuai Dengan Kebutuhan Anda</p>
+                    <!-- Tombol Mulai Belanja -->
+                    <a href="toko.php">
+                        <button
+                            class="btn btn-lg btn-primary py-3 px-4 px-lg-5 me-0 fw-bold animate__animated animate__pulse animate__infinite"
+                            style="background-color: #EC633D; border: none;">
+                            Mulai Belanja!
+                        </button>
+                        <img src=" " class="animate__animated animate__pulse animate__infinite" style="width: 60px;"
+                            loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="kami">
+        <div class="container pb-5">
+            <div class="row text-lg-start text-center">
+                <!-- Tentang Kami -->
+                <div class="col-lg-6 col-12">
+                    <h2 class="fw-bold py-3 py-md-4">TENTANG KAMI</h2>
+                    <p class="fw-normal px-2 px-lg-0" style="text-align: justify !important;">
+                        OFFICELINE adalah sebuah website toko alat tulis atau platform online yang
+                        menyediakan berbagai macam peralatan tulis dan kebutuhan kantor. Di situs ini, pelanggan dapat
+                        menjelajahi katalog produk yang meliputi pensil, pulpen, kertas, buku catatan, penggaris,
+                        spidol, highlighter dan peralatan lainnya yang diperlukan untuk aktivitas menulis, belajar atau
+                        bekerja. Ayo gabung kedalam komunitas OFFICELINE dan mulai belanja perlengkapan alat tulis mu
+                        sekarang juga!
+                    </p>
+                </div>
+                <!-- KONTAK -->
+                <div id="kontak" class="col-lg-5 offset-lg-1 col-12 pb-10">
+                    <h2 class="fw-bold py-3 py-md-4">HUBUNGI KAMI</h2>
+                    <h4 class="my-2 fw-normal">
+                        <a href="pesan.html" class="nav-link" style="color: black !important;">
+                            <i class="bi bi-whatsapp"></i>
+                            OFFICELINE
+                        </a>
+                    </h4>
+                    <p><i class="bi bi-envelope"></i> officeline@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="text-center p-4">
+        © 2024 OFFICELINE. All rights reserved.
+    </div>
+
+    <script src="bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            closeSidebar(); // Menutup sidebar saat halaman dimuat
+        });
+    </script>
+    <script>   function openSidebar() {
+            document.getElementById("sidebar").style.display = "block";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
